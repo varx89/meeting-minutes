@@ -28,7 +28,7 @@ const Particle = () => {
                 },
             },
             color: {
-                value: '#ffffff',
+                value: '#7C7D7A',
             },
             shape: {
                 type: 'circle',
@@ -50,7 +50,7 @@ const Particle = () => {
                 random: false,
                 anim: {
                     enable: false,
-                    speed: 0.5,
+                    speed: 0.2,
                     opacity_min: 0.1,
                     sync: false,
                 },
