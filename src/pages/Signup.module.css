@@ -1,7 +1,7 @@
 .body {
     /* background-color: #721130; */
     /* background: linear-gradient(#721130); */
-    min-height: 30rem;
+    min-height: 35rem;
     margin-top: 3rem;
     /* position: relative; */
 }
@@ -104,6 +104,6 @@
 }
 @media screen and (max-width: 607px) {
     .body {
-        height: 48rem;
+        height: 55rem;
     }
 }

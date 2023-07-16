@@ -1,20 +1,52 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import bodyIcon from '../media/notes.png';
+import bodyIcon from '../media/login.png';
 import styles from './Login.module.css';
 
 const Login = () => {
     return (
         <div className={styles.body}>
             <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>
-                    Organize your work and life, finally.
-                </h2>
                 <div className={styles.homeBody}>
                     <img src={bodyIcon} alt="Uprising" />
                     <div className={styles.hero}>
-                        Become more organized, calm and focused on your tasks.
-                        Ranked in top <span>#5</span> task manager and to-do
-                        list apps
+                        <h2 className={styles.sectionTitle}>
+                            Have Account? Login now!
+                        </h2>
+                        <form>
+                            <label htmlFor="email">Email</label>
+                            <input
+                                type="email"
+                                placeholder="demo@demo.com"
+                                id="email"
+                            />
+                            <label htmlFor="password">Password</label>
+                            <input
+                                type="password"
+                                placeholder="password"
+                                id="password"
+                            />
+                            <div className={styles.loginButtons}>
+                                <button
+                                    className={styles.button}
+                                    type="submit"
+                                    name="login"
+                                    id="login"
+                                >
+                                    <FontAwesomeIcon icon="fa-solid fa-right-to-bracket" />
+                                    Login
+                                </button>
+                                <button
+                                    className={styles.button}
+                                    type="submit"
+                                    name="signup"
+                                    id="signup"
+                                >
+                                    <FontAwesomeIcon icon="fa-solid fa-user-plus" />
+                                    Sign up
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
