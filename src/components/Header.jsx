@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../media/logo.webp';
 import styles from './Header.module.css';
 
@@ -9,12 +10,18 @@ const Header = () => {
                 <img src={logo} alt="Meeting Minutes" />
             </div>
             <ul className={styles.menu}>
-                <li>Home</li>
+                <li>
+                    <Link to="/home">Home</Link>
+                </li>
                 <li>What's new</li>
                 <li>Pricing</li>
                 <li>Support</li>
-                <li className={styles.login}>Log in</li>
-                <li className={styles.signup}>Sign up</li>
+                <li className={styles.login}>
+                    <Link to="/auth/login">Log in</Link>
+                </li>
+                <li className={styles.signup}>
+                    <Link to="/auth/signup">Sign up</Link>
+                </li>
             </ul>
         </div>
     );

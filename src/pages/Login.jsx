@@ -1,12 +1,10 @@
 import React from 'react';
 import bodyIcon from '../media/notes.png';
-import styles from './Body.module.css';
-import Particle from './Particle';
+import styles from './Login.module.css';
 
-const Body = () => {
+const Login = () => {
     return (
         <div className={styles.body}>
-            <Particle />
             <div className={styles.section}>
                 <h2 className={styles.sectionTitle}>
                     Organize your work and life, finally.
@@ -24,4 +22,4 @@ const Body = () => {
     );
 };
 
-export default Body;
+export default Login;

@@ -1,6 +1,6 @@
 .body {
     /* background-color: #721130; */
-    background: linear-gradient(#721130 60%, #211e1e);
+    background: linear-gradient(#721130);
     height: 35rem;
     /* position: relative; */
 }
@@ -17,7 +17,7 @@
 }
 .sectionTitle {
     color: white;
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: bold;
     background-color: #721130;
     /* padding: 1.5rem 2rem; */
@@ -43,8 +43,9 @@
     padding-top: 1rem;
 }
 .hero span {
-    color: #eb1212;
+    color: white;
     font-weight: bold;
+    font-size: 1.5rem;
 }
 @media screen and (min-width: 711px) {
     .homeBody {
