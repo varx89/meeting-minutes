@@ -1,0 +1,41 @@
+.header {
+    background-color: #5f1a30;
+    padding: 0.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    --mask: conic-gradient(
+            from -45deg at bottom,
+            #0000,
+            #000 1deg 89deg,
+            #0000 90deg
+        )
+        50%/25px 100%;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+.logo img {
+    width: 10rem;
+}
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 2rem;
+    font-size: 1.1rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.login {
+    margin-left: 1rem;
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.5rem;
+}
+.signup {
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.5rem;
+}

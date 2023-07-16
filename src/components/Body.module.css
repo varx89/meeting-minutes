@@ -1,0 +1,13 @@
+.body {
+    /* background-color: #721130; */
+    background: linear-gradient(#721130 60%, #211e1e);
+    height: 35rem;
+    position: relative;
+}
+.sectionTitle {
+    /* z-index: 5; */
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    position: absolute;
+}
