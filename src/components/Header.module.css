@@ -1,0 +1,63 @@
+.header {
+    background-color: #5f1a30;
+    padding: 0.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    --mask: conic-gradient(
+            from -45deg at bottom,
+            #0000,
+            #000 1deg 89deg,
+            #0000 90deg
+        )
+        50%/25px 100%;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+.logo img {
+    width: 10rem;
+}
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 2rem;
+    font-size: 1.1rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.menu li a {
+    text-decoration: none;
+    color: white;
+}
+.menu li a:hover {
+    color: bisque;
+}
+.login {
+    margin-left: 1rem;
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.5rem;
+}
+.login:hover {
+    color: bisque;
+}
+.login li a {
+    color: white;
+    text-decoration: none;
+}
+
+.signup {
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.5rem;
+}
+.signup:hover {
+    color: bisque;
+}
+.signup li a {
+    color: white;
+    text-decoration: none;
+}
