@@ -8,7 +8,7 @@ body {
     scroll-behavior: smooth;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Roboto Mono', monospace;
-    background-color: #721130;
+    /* background-color: #721130; */
     min-width: 350px;
 }
 ::-webkit-scrollbar {

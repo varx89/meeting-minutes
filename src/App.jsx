@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import DashboardLayout from './components/Dashboard/DashboardLayout';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -14,6 +15,9 @@ function App() {
                 <Route path="/auth/login" element={<Login />} />
                 <Route path="/auth/signup" element={<Signup />} />
                 <Route path="*" element={<Redirect />} />
+            </Route>
+            <Route path="/dashboard" element={<DashboardLayout />}>
+                {/* <Route index element /> */}
             </Route>
         </Routes>
     );
