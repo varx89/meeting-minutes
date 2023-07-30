@@ -1,10 +1,10 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import styles from './Layout.module.css';
+import Header from '../Dashboard/Header';
+import styles from './DashBoardLayout.module.css';
+import Footer from './Footer';
 
-const Layout = () => {
+const DashboardLayout = () => {
     return (
         <div className={styles.body}>
             <Header />
@@ -14,4 +14,4 @@ const Layout = () => {
     );
 };
 
-export default Layout;
+export default DashboardLayout;

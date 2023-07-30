@@ -3,13 +3,15 @@ html {
 }
 body {
     margin: 0;
+    padding: 0;
     overflow-x: hidden;
     scrollbar-width: none;
     scroll-behavior: smooth;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Roboto Mono', monospace;
-    background-color: #721130;
+    /* background-color: #721130; */
     min-width: 350px;
+    box-sizing: border-box;
 }
 ::-webkit-scrollbar {
     display: none;

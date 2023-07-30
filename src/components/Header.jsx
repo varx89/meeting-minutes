@@ -22,6 +22,9 @@ const Header = () => {
                 <li className={styles.signup}>
                     <Link to="/auth/signup">Sign up</Link>
                 </li>
+                <li className={styles.signup}>
+                    <Link to="/auth/dashboard">Dashboard</Link>
+                </li>
             </ul>
         </div>
     );
