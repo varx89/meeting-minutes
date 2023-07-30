@@ -1,0 +1,5 @@
+.body {
+    background-color: white;
+    display: grid;
+    grid-template-rows: auto 90% auto;
+}

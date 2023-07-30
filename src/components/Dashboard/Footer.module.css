@@ -1,0 +1,19 @@
+.footer {
+    background-color: #211e1e;
+    padding: 2rem 0;
+    height: max-content;
+    width: 100vw;
+    max-height: 4rem;
+    bottom: 0;
+}
+.logo img {
+    width: 7rem;
+    padding-left: 5rem;
+    padding-bottom: 0.25rem;
+}
+.copyright {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
