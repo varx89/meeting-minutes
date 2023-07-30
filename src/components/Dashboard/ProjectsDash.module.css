@@ -16,7 +16,7 @@ section {
 .project {
     /* background-color: #cac6c8; */
     background-color: white;
-    padding: 0 2rem 1rem 0;
+    padding: 0 2rem 0 0;
     border-radius: 0.5rem;
     width: 17rem;
     -webkit-box-shadow: 0px 0px 15px -4px rgba(0, 0, 0, 0.32);
@@ -111,4 +111,12 @@ section {
     height: 100%;
     width: 100%;
     margin-left: 1rem;
+}
+.input {
+    height: 1.8rem;
+    width: 12rem;
+    text-decoration: none;
+    outline-style: none;
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
 }

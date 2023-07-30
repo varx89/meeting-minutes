@@ -18,7 +18,7 @@ const Projects = () => {
                                         style={{ color: '#37282d' }}
                                         size="xs"
                                     />
-                                    FT2ICGS
+                                    FFFFFGHDRTED
                                 </h4>
                                 <div className={styles.critical}>
                                     <FontAwesomeIcon
@@ -60,7 +60,7 @@ const Projects = () => {
                             <li>
                                 <Link
                                     className={styles.viewProject}
-                                    to="/auth/dashboard/project/FT2ICGS"
+                                    to="/auth/dashboard/project/FFFFFFGHDRTED"
                                 >
                                     Manage
                                 </Link>
@@ -70,36 +70,19 @@ const Projects = () => {
                     <article className={styles.project}>
                         <div className={styles.newProject}>
                             <span>Add new project</span>
-                            <FontAwesomeIcon
-                                icon="fa-solid fa-circle-plus"
-                                style={{ color: 'gray' }}
+                            <input
+                                className={styles.input}
+                                maxLength={12}
+                                type="text"
+                                name="project"
+                                id="project"
+                                placeholder={`Project's name`}
+                                required
                             />
-                        </div>
-                    </article>
-                    <article className={styles.project}>
-                        <div className={styles.newProject}>
-                            <span>Add new project</span>
                             <FontAwesomeIcon
                                 icon="fa-solid fa-circle-plus"
                                 style={{ color: 'gray' }}
-                            />
-                        </div>
-                    </article>
-                    <article className={styles.project}>
-                        <div className={styles.newProject}>
-                            <span>Add new project</span>
-                            <FontAwesomeIcon
-                                icon="fa-solid fa-circle-plus"
-                                style={{ color: 'gray' }}
-                            />
-                        </div>
-                    </article>
-                    <article className={styles.project}>
-                        <div className={styles.newProject}>
-                            <span>Add new project</span>
-                            <FontAwesomeIcon
-                                icon="fa-solid fa-circle-plus"
-                                style={{ color: 'gray' }}
+                                size="xl"
                             />
                         </div>
                     </article>
