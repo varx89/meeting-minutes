@@ -1,0 +1,46 @@
+.project {
+    background-color: #72113012;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+    position: relative;
+}
+.project img {
+    width: 3.5rem;
+    position: absolute;
+    border: 0.2rem solid rgb(221, 217, 217);
+    border-radius: 0.5rem;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0.5rem 1rem;
+}
+.projectGroupMenu {
+    display: flex;
+    justify-content: center;
+    padding-left: 5rem;
+    align-items: center;
+    gap: 1rem;
+}
+.projectMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.projectName {
+    padding: 0 5rem;
+    font-weight: bold;
+}
+
+.sectionBG {
+    /* background-color: #72112e0e; */
+    height: 800px;
+    padding: 2rem 2rem;
+}
+
+@media screen and (max-width: 500px) {
+    .projectGroupMenu {
+        font-size: 0.8rem;
+    }
+}

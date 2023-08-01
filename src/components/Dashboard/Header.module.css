@@ -13,10 +13,17 @@
     align-items: flex-start;
     color: white;
     font-size: 0.7rem;
+    flex-wrap: wrap;
 }
 
 .logo img {
     width: 7rem;
+}
+.projectsName {
+    color: bisque;
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
 }
 .menu {
     display: flex;
