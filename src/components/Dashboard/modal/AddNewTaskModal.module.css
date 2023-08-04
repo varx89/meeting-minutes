@@ -1,0 +1,29 @@
+.taskAdd {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    background-color: white;
+    /* border: 1px solid bisque; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+    cursor: pointer;
+}
+.addnewmodal {
+    background-color: white;
+    border-radius: 0.25rem;
+    width: 15rem;
+    /* height: 20rem; */
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    gap: 1rem;
+}
+
+.closeModal {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

@@ -2,18 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { default as taskImage } from '../../media/projectBG.png';
 import styles from './Grouptasks.module.css';
+import AddNewTaskModal from './modal/AddNewTaskModal';
 
 const GroupTasks = () => {
     return (
         <div className={styles.taskmng}>
-            <span>To do</span>
-            <div className={styles.taskAdd}>
-                <FontAwesomeIcon
-                    icon="fa-solid fa-circle-plus"
-                    style={{ color: 'gray' }}
-                />
-            </div>
-
+            <span className={styles.groupTasksTitle}>To do</span>
+            <AddNewTaskModal />
             <article className={styles.taskRow}>
                 <img src={taskImage} alt="" />
                 <div className={styles.taskTitle}>

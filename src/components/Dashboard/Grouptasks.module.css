@@ -4,15 +4,10 @@
     flex-direction: column;
     gap: 0.5rem;
 }
-
-.taskAdd {
-    text-align: center;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0;
-    background-color: white;
-    /* border: 1px solid bisque; */
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+.groupTasksTitle {
+    padding-left: 1rem;
 }
+
 .taskRow {
     background-color: white;
     padding: 0.75rem;
