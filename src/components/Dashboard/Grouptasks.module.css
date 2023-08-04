@@ -1,0 +1,51 @@
+.taskmng {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.taskAdd {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    background-color: white;
+    /* border: 1px solid bisque; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+}
+.taskRow {
+    background-color: white;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 0.2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+}
+.taskRow img {
+    object-fit: cover;
+    height: 7rem;
+}
+.taskClose {
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.taskTitle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 500px) {
+    .projectGroupMenu {
+        font-size: 0.8rem;
+    }
+}

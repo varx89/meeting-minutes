@@ -1,89 +1,36 @@
-.project {
-    background-color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: flex-start;
-    position: relative;
-}
-.project img {
-    width: 3.5rem;
-    position: absolute;
-    border: 0.2rem solid rgb(221, 217, 217);
-    border-radius: 0.5rem;
-    box-shadow: rgba(149, 157, 165, 0.4) 0px 0.5rem 1rem;
-}
-.projectGroupMenu {
-    display: flex;
-    justify-content: center;
-    padding-left: 5rem;
-    align-items: center;
-    gap: 1rem;
-}
-.projectMenu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-}
-.projectName {
-    padding: 0 5rem;
-    font-weight: bold;
-}
-
 .sectionBG {
-    background-color: #72113012;
-    height: 800px;
+    min-height: 50rem;
     padding: 2.5rem 2rem;
 }
-
+.tasksGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.taskAddNew {
+    text-align: center;
+    padding: 5rem 1rem;
+    margin: 0.5rem 0;
+    background-color: white;
+    /* border: 1px solid bisque; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 .taskmng {
     width: 15rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-
-.taskAdd {
-    text-align: center;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0;
-    background-color: white;
-}
-.taskRow {
-    background-color: white;
-    padding: 0.75rem;
-    font-size: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    border-radius: 0.2rem;
-}
-.taskRow img {
-    object-fit: cover;
-    height: 7rem;
-}
-.taskClose {
-    font-size: 0.7rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0.5rem;
-    justify-content: space-between;
-    align-items: center;
-}
-.taskTitle {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-@media screen and (max-width: 500px) {
-    .projectGroupMenu {
-        font-size: 0.8rem;
-    }
+.input {
+    height: 1.8rem;
+    width: 12rem;
+    text-decoration: none;
+    outline-style: none;
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+    border: 1px solid rgb(208, 203, 203);
 }

@@ -76,7 +76,7 @@ const Projects = () => {
                                 type="text"
                                 name="project"
                                 id="project"
-                                placeholder={`Project's name`}
+                                placeholder={`Project's name...`}
                                 required
                             />
                             <FontAwesomeIcon
