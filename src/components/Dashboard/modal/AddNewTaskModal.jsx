@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import Modal from 'styled-react-modal';
+import { default as noimageTask } from '../../../media/no-image-found.png';
 import styles from './AddNewTaskModal.module.css';
 
 const StyledModal = Modal.styled`
@@ -48,28 +49,48 @@ const AddNewTaskModal = () => {
                 backgroundProps={{ opacity }}
             >
                 <div className={styles.closeModal}>
+                    <h4>Add New Task</h4>
                     <FontAwesomeIcon
                         icon="fa-solid fa-rectangle-xmark"
                         style={{ color: 'gray' }}
                         onClick={toggleModal}
                     />
                 </div>
-                <span>Add New Task</span>
-                <label htmlFor="taskTitle">Task Title</label>
-                <input type="text" name="taskTitle" id="taskTitle" />
+                <div className={styles.imageGroupTitle}>
+                    <div>
+                        <label htmlFor="taskImageUpload">
+                            <img
+                                className={styles.taskImg}
+                                src={noimageTask}
+                                alt="No Set"
+                            />
+                            <FontAwesomeIcon
+                                className={styles.imageEdit}
+                                icon="fa-solid fa-square-pen"
+                            />
+                        </label>
+                        <input
+                            type="file"
+                            name="taskImageUpload"
+                            id="taskImageUpload"
+                            accept="image/*"
+                            style={{ display: 'none' }}
+                        />
+                    </div>
+                    <div className={styles.taskTitleGroup}>
+                        <label htmlFor="taskTitle">Task Title</label>
+                        <input type="text" name="taskTitle" id="taskTitle" />
+                    </div>
+                </div>
+
                 <label htmlFor="taskDescription">Task Description</label>
                 <textarea
                     name="taskDescription"
                     id="taskDescription"
-                    cols="30"
+                    cols="60"
                     rows="10"
                 ></textarea>
-                <label htmlFor="taskImageUpload">Task image</label>
-                <input
-                    type="file"
-                    name="taskImageUpload"
-                    id="taskImageUpload"
-                />
+
                 <button onClick={toggleModal}>Add Task</button>
                 <button onClick={toggleModal}>Close me</button>
             </StyledModal>

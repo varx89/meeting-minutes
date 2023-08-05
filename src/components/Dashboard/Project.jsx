@@ -6,12 +6,11 @@ import GroupTasks from './GroupTasks';
 import styles from './Project.module.css';
 import ProjectNav from './ProjectNav';
 
-const FadingBackground = styled(BaseModalBackground)`
-    opacity: ${(props) => props.opacity};
-    transition: all 0.3s ease-in-out;
-`;
-
 const Project = () => {
+    const FadingBackground = styled(BaseModalBackground)`
+        opacity: ${(props) => props.opacity};
+        transition: all 0.3s ease-in-out;
+    `;
     return (
         <ModalProvider backgroundComponent={FadingBackground}>
             <section>
