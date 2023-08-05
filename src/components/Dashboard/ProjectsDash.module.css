@@ -1,6 +1,7 @@
 section {
     padding-bottom: 5rem;
     height: max-content;
+    background-color: #72113012;
 }
 .body {
     padding: 0.5rem 2rem;
@@ -119,4 +120,14 @@ section {
     outline-style: none;
     font-size: 1.1rem;
     padding-left: 0.5rem;
+    border: 1px solid rgb(208, 203, 203);
+}
+.textAreaProj {
+    height: 3rem;
+    width: 12rem;
+    text-decoration: none;
+    outline-style: none;
+    font-size: 0.9rem;
+    padding-left: 0.5rem;
+    border: 1px solid rgb(208, 203, 203);
 }

@@ -76,9 +76,17 @@ const Projects = () => {
                                 type="text"
                                 name="project"
                                 id="project"
-                                placeholder={`Project's name`}
+                                placeholder={`Project's name...`}
                                 required
                             />
+                            <textarea
+                                className={styles.textAreaProj}
+                                name="textAreaDesc"
+                                id="textAreaDesc"
+                                cols="30"
+                                rows="2"
+                                placeholder="Description..."
+                            ></textarea>
                             <FontAwesomeIcon
                                 icon="fa-solid fa-circle-plus"
                                 style={{ color: 'gray' }}

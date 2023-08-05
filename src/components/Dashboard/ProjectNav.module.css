@@ -1,0 +1,53 @@
+.project {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+    position: relative;
+}
+.project img {
+    width: 3.5rem;
+    position: absolute;
+    border: 0.2rem solid rgb(221, 217, 217);
+    border-radius: 0.5rem;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0.5rem 1rem;
+}
+.projGroupDesc {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5rem;
+    gap: 2rem;
+    justify-content: space-between;
+    padding: 0 5rem;
+}
+.projectDesc {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.projectGroupMenu {
+    display: flex;
+    justify-content: center;
+    padding-left: 5rem;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+.projectMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.projectName {
+    font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+    .projectGroupMenu {
+        font-size: 0.8rem;
+    }
+}

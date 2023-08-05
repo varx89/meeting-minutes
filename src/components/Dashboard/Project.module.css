@@ -1,0 +1,39 @@
+.sectionBG {
+    min-height: 50rem;
+    padding: 2.5rem 2rem;
+}
+.tasksGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.taskAddNew {
+    text-align: center;
+    padding: 5rem 1rem;
+    margin: 0.5rem 0;
+    background-color: white;
+    /* border: 1px solid bisque; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.taskmng {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.input {
+    height: 1.8rem;
+    width: 12rem;
+    text-decoration: none;
+    outline-style: none;
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+    border: 1px solid rgb(208, 203, 203);
+}
+.newGroup {
+    padding-left: 1rem;
+}
