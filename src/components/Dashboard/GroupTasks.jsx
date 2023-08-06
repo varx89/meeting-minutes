@@ -1,20 +1,60 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
-import { default as taskImage } from '../../media/projectBG.png';
+import React, { useState } from 'react';
+import taskimg, { default as taskImage } from '../../media/projectBG.png';
 import styles from './Grouptasks.module.css';
-import AddNewTaskModal from './modal/AddNewTaskModal';
+import AddEditTaskModal from './modal/AddEditTaskModal';
+import TaskModal from './modal/TaskModal';
 
 const GroupTasks = () => {
+    const data = {
+        taskTitle: 'Hello Task',
+        taskDescription: 'loren ipsum dolores sit amet whatever',
+        taskImg: taskimg,
+    };
+    const [isAddModal, setAddModal] = useState(false);
+    const [isEditModal, setEditModal] = useState(false);
+    const [isTaskModal, setTaskModal] = useState(false);
+
+    function addTask(payload) {
+        setAddModal(payload);
+    }
+    function editTask(payload) {
+        setEditModal(payload);
+    }
+    function viewTask(payload) {
+        setTaskModal(payload);
+    }
+
+    function showAddModal() {
+        setAddModal((prevState) => !prevState);
+    }
+    function showEditModal() {
+        setEditModal((prevState) => !prevState);
+    }
+    function viewTaskModal() {
+        setTaskModal((prevState) => !prevState);
+    }
     return (
         <div className={styles.taskmng}>
             <span className={styles.groupTasksTitle}>To do</span>
-            <AddNewTaskModal />
+            <div className={styles.taskAdd} onClick={showAddModal}>
+                <FontAwesomeIcon
+                    icon="fa-solid fa-circle-plus"
+                    style={{ color: 'gray' }}
+                />
+            </div>
+            {isAddModal && <AddEditTaskModal callbackAddEdit={addTask} />}
+            {isEditModal && (
+                <AddEditTaskModal callbackAddEdit={editTask} data={data} />
+            )}
+            {isTaskModal && <TaskModal callback={viewTask} />}
             <article className={styles.taskRow}>
-                <img src={taskImage} alt="" />
+                <img onClick={viewTaskModal} src={taskImage} alt="" />
                 <div className={styles.taskTitle}>
-                    <span>Media Outlets</span>
+                    <span onClick={viewTaskModal}>Media Outlets</span>
                     <FontAwesomeIcon
-                        icon="fa-solid fa-ellipsis"
+                        onClick={showEditModal}
+                        icon="fa-solid fa-pen-to-square"
                         style={{ color: 'gray' }}
                     />
                 </div>
