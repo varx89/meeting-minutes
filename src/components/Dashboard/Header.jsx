@@ -16,6 +16,9 @@ const Header = () => {
                 <li>
                     <Link to="/home">Home</Link>
                 </li>
+                <li>
+                    <Link to="/auth/dashboard">Dashboard</Link>
+                </li>
                 <li className={styles.rightSidebar}>
                     <div className={styles.account}>
                         <img
