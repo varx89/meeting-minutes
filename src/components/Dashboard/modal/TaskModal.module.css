@@ -1,0 +1,139 @@
+.taskAdd {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    background-color: white;
+    /* background-color: #72113012; */
+    /* border: 1px solid bisque; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+    cursor: pointer;
+}
+.addnewmodal {
+    background-color: white;
+    border-radius: 0.25rem;
+    /* height: 20rem; */
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    gap: 1rem;
+    /* width: 25rem; */
+}
+
+.closeModal {
+    color: #37282d;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.closeModal h4 {
+    margin: 0;
+}
+
+.imageGroupTitle {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.horizontal {
+    border-top: 1px solid gray;
+    width: 100%;
+    opacity: 0.2;
+}
+
+.taskImg {
+    width: 80%;
+    height: 7rem;
+    border-radius: 0.25rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+    border: 0.25rem solid rgb(221, 217, 217);
+    object-fit: cover;
+    position: relative;
+}
+.description {
+    font-size: 0.8rem;
+    width: 100%;
+    padding: 0.75rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.description img {
+    width: 1.8rem;
+    border-radius: 50%;
+    padding-left: 0.5rem;
+}
+.descContent {
+    font-size: 0.8rem;
+    width: 20rem;
+    padding: 1rem 2rem;
+}
+.taskClose {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.comments {
+    width: 100%;
+    font-size: 0.9rem;
+    color: gray;
+}
+.commTitle {
+    padding: 1rem;
+}
+.comments img {
+    width: 3rem;
+    box-shadow: rgba(149, 157, 165, 0.7) 0px 0.5rem 1.5rem;
+    padding: 0;
+}
+.commContent {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: flex-start;
+}
+.commContentUser {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(149, 157, 165, 0.4) 0px 0.5rem 1.5rem;
+}
+.commUser {
+    font-size: 0.7rem;
+    color: #37282d;
+    font-weight: bold;
+    opacity: 0.7;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.commText {
+    width: 20rem;
+    font-size: 0.7rem;
+    padding-left: 0.75rem;
+}
+
+@media screen and (max-width: 445px) {
+    .addnewmodal {
+        max-width: 20rem;
+    }
+    .descContent {
+        width: 16rem;
+    }
+    .commText {
+        width: 16rem;
+    }
+}

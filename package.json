@@ -17,6 +17,7 @@
     "react-particles": "^2.11.0",
     "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
+    "react-trix": "^0.10.2",
     "styled-components": "^6.0.7",
     "styled-react-modal": "^3.0.1",
     "tsparticles": "^2.11.0",
