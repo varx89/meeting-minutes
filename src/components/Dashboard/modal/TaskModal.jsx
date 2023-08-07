@@ -73,13 +73,19 @@ const TaskModal = ({ callback }) => {
                         <div>
                             <FontAwesomeIcon
                                 icon="fa-regular fa-calendar"
-                                style={{ paddingRight: '0.2rem' }}
+                                style={{
+                                    color: 'black',
+                                    paddingRight: '0.2rem',
+                                }}
                             />
                             10.04.23 posted
                         </div>
 
                         <div>
-                            <FontAwesomeIcon icon="fa-solid fa-flag" />
+                            <FontAwesomeIcon
+                                icon="fa-solid fa-flag"
+                                style={{ color: 'gray' }}
+                            />
 
                             <FontAwesomeIcon
                                 icon="fa-brands fa-hotjar"

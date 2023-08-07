@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 .logo {
     display: flex;
@@ -62,4 +63,9 @@
     justify-content: space-around;
     align-items: center;
     font-size: 0.8rem;
+}
+.taskManagerWrapper {
+    background-color: red;
+    display: flex;
+    position: relative;
 }

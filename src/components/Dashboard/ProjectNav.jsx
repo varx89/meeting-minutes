@@ -24,7 +24,7 @@ const ProjectNav = () => {
 
     return (
         <nav className={styles.project}>
-            <img src={projectBG} alt={id} />
+            <img src={projectBG} alt={id} onClick={showEditProjModal} />
             <div className={styles.projGroupDesc}>
                 <span className={styles.projectName}>
                     {id}

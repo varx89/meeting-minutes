@@ -6,7 +6,6 @@
     flex-wrap: wrap;
     gap: 1rem;
     align-items: flex-start;
-    position: relative;
 }
 .project img {
     width: 3.5rem;
