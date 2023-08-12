@@ -2,20 +2,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { React, useState } from 'react';
 import Modal from 'styled-react-modal';
 import noImageTask from '../../../media/no-image-found.png';
-import styles from './AddEditTaskModal.module.css';
+import styles from './EditProjectModal.module.css';
 
 const StyledModal = Modal.styled`
   opacity: ${(props) => props.opacity};
   transition : all 0.3s ease-in-out;`;
 
-const AddEditTaskModal = ({ callbackAddEdit, data }) => {
+const EditProjectModal = ({ callbackEditProj, data }) => {
     const [isOpen, setIsOpen] = useState(true);
     const [opacity, setOpacity] = useState(0);
 
     function toggleModal() {
         setOpacity(0);
         setIsOpen(!isOpen);
-        callbackAddEdit(!isOpen);
+        callbackEditProj(!isOpen);
     }
 
     function afterOpen() {
@@ -45,9 +45,9 @@ const AddEditTaskModal = ({ callbackAddEdit, data }) => {
             >
                 <div className={styles.closeModal}>
                     <h4>
-                        {data && data.taskTitle
-                            ? `Edit  ${data.taskTitle}`
-                            : 'Add New Task'}
+                        {data && data.projTitle
+                            ? `Edit  ${data.projTitle}`
+                            : 'Add New Project'}
                     </h4>
                     <FontAwesomeIcon
                         icon="fa-solid fa-rectangle-xmark"
@@ -65,8 +65,8 @@ const AddEditTaskModal = ({ callbackAddEdit, data }) => {
                                 <img
                                     className={styles.taskImg}
                                     src={
-                                        data && data.taskImg
-                                            ? data.taskImg
+                                        data && data.projImg
+                                            ? data.projImg
                                             : noImageTask
                                     }
                                     alt="No Set"
@@ -88,13 +88,13 @@ const AddEditTaskModal = ({ callbackAddEdit, data }) => {
                     </div>
 
                     <div className={styles.taskTitleGroup}>
-                        <label htmlFor="taskTitle">Task Title</label>
+                        <label htmlFor="taskTitle">Project Title</label>
                         <input
                             type="text"
                             name="taskTitle"
                             id="taskTitle"
                             placeholder="Add title here..."
-                            value={data && data.taskTitle ? data.taskTitle : ''}
+                            value={data && data.projTitle ? data.projTitle : ''}
                         />
                     </div>
                 </div>
@@ -103,23 +103,23 @@ const AddEditTaskModal = ({ callbackAddEdit, data }) => {
                     className={styles.taskDescLabel}
                     htmlFor="taskDescription"
                 >
-                    Task Description
+                    Project Description
                 </label>
-                <textarea
+                <input
+                    type="text"
                     className={styles.textareaDesc}
                     name="taskDescription"
                     id="taskDescription"
-                    rows="10"
                     placeholder="Add description here..."
-                    value={
-                        data && data.taskDescription ? data.taskDescription : ''
-                    }
-                ></textarea>
+                    value={data && data.projDesc ? data.projDesc : ''}
+                ></input>
                 {/* <Wysiwyg onChange={handleContentChange} /> */}
                 <hr className={styles.horizon} />
                 <div className={styles.taskButtons}>
                     <button className={styles.buttonAdd} onClick={toggleModal}>
-                        {data && data.taskTitle ? 'Edit Task' : 'Add Task'}
+                        {data && data.projTitle
+                            ? 'Edit Project'
+                            : 'Add Project'}
                     </button>
                     <button
                         className={styles.buttonCancel}
@@ -133,4 +133,4 @@ const AddEditTaskModal = ({ callbackAddEdit, data }) => {
     );
 };
 
-export default AddEditTaskModal;
+export default EditProjectModal;

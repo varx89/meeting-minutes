@@ -1,22 +1,45 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import projimg from '../../media/no-image-found.png';
 import projectBG from '../../media/projectBG.png';
 import styles from './ProjectNav.module.css';
+import EditProjectModal from './modal/EditProjectModal';
 
 const ProjectNav = () => {
+    const data = {
+        projTitle: 'FFFFFFGHDRTEDx',
+        projDesc: 'loren ipsum dolores sit amet whatever x',
+        projImg: projimg,
+    };
+    const [isProjectModal, setProjectModal] = useState(false);
     const { id } = useParams();
+
+    function editProject(payload) {
+        setProjectModal(payload);
+    }
+    function showEditProjModal() {
+        setProjectModal((prevState) => !prevState);
+    }
+
     return (
         <nav className={styles.project}>
-            <img src={projectBG} alt={id} />
+            <img src={projectBG} alt={id} onClick={showEditProjModal} />
             <div className={styles.projGroupDesc}>
                 <span className={styles.projectName}>
-                    {id}{' '}
+                    {id}
                     <FontAwesomeIcon
-                        style={{ color: 'gray' }}
+                        onClick={showEditProjModal}
+                        style={{ color: 'gray', paddingLeft: '0.5rem' }}
                         size="xs"
                         icon="fa-solid fa-pen-to-square"
                     />
+                    {isProjectModal && (
+                        <EditProjectModal
+                            callbackEditProj={editProject}
+                            data={data}
+                        />
+                    )}
                 </span>
                 <span className={styles.projectDesc}>Description</span>
             </div>

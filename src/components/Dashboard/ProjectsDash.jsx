@@ -10,7 +10,7 @@ const Projects = () => {
                 <h1 className={styles.h1}>To Do Projects</h1>
                 <div className={styles.body}>
                     <article className={styles.project}>
-                        <ul>
+                        <ul className={styles.ulDesc}>
                             <li>
                                 <h4>
                                     <FontAwesomeIcon
@@ -18,19 +18,23 @@ const Projects = () => {
                                         style={{ color: '#37282d' }}
                                         size="xs"
                                     />
-                                    FFFFFGHDRTED
+                                    <span className={styles.projTitle}>
+                                        FFFFFGHDRTED
+                                    </span>
                                 </h4>
                                 <div className={styles.critical}>
                                     <FontAwesomeIcon
                                         icon="fa-solid fa-flag"
                                         style={{ color: 'gray' }}
+                                        size="xs"
                                     />
-                                    0
+                                    <span className={styles.projTitle}>0</span>
                                     <FontAwesomeIcon
                                         icon="fa-brands fa-hotjar"
                                         style={{ color: '#ff0000' }}
+                                        size="xs"
                                     />
-                                    2
+                                    <span className={styles.projTitle}>0</span>
                                 </div>
                             </li>
                             <li>
