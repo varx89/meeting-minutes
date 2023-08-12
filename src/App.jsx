@@ -15,7 +15,7 @@ import Login from './pages/Login';
 import Redirect from './pages/Redirect';
 import Signup from './pages/Signup';
 
-axios.defaults.baseURL = process.env.REACT_APP_AXIOS_URL; //http://localhost:8000/process.env.REACT_APP_AXIOS_URL
+axios.defaults.baseURL = process.env.REACT_APP_API_URL; //http://localhost:8000/process.env.REACT_APP_AXIOS_URL
 axios.defaults.withCredentials = true;
 
 function App() {
