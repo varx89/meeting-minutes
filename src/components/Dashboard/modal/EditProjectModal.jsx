@@ -1,6 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { React, useState } from 'react';
+import axios from 'axios';
+import { React, useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Modal from 'styled-react-modal';
+import { UserContext } from '../../../context/userContext';
 import noImageTask from '../../../media/no-image-found.png';
 import styles from './EditProjectModal.module.css';
 
@@ -8,9 +11,28 @@ const StyledModal = Modal.styled`
   opacity: ${(props) => props.opacity};
   transition : all 0.3s ease-in-out;`;
 
-const EditProjectModal = ({ callbackEditProj, data }) => {
+const EditProjectModal = ({ callbackEditProj, dataprop }) => {
     const [isOpen, setIsOpen] = useState(true);
     const [opacity, setOpacity] = useState(0);
+    const [data, setData] = useState(dataprop);
+    const { user } = useContext(UserContext);
+    const { id } = useParams();
+
+    useEffect(() => {
+        if (user) {
+            axios.post('/project/' + id).then(({ data }) => {
+                setData(data[0]);
+            });
+        }
+    }, []);
+
+    function handleChange(e) {
+        const value = e.target.value;
+        setData({
+            ...data,
+            [e.target.name]: value,
+        });
+    }
 
     function toggleModal() {
         setOpacity(0);
@@ -45,8 +67,8 @@ const EditProjectModal = ({ callbackEditProj, data }) => {
             >
                 <div className={styles.closeModal}>
                     <h4>
-                        {data && data.projTitle
-                            ? `Edit  ${data.projTitle}`
+                        {data && data.title
+                            ? `Edit  ${data.title}`
                             : 'Add New Project'}
                     </h4>
                     <FontAwesomeIcon
@@ -65,20 +87,20 @@ const EditProjectModal = ({ callbackEditProj, data }) => {
                                 <img
                                     className={styles.taskImg}
                                     src={
-                                        data && data.projImg
-                                            ? data.projImg
+                                        data && data.image
+                                            ? `${process.env.REACT_APP_API_URL}/images/${data.image}`
                                             : noImageTask
                                     }
                                     alt="No Set"
                                 />
                             </label>
-                            <input
+                            {/* <input
                                 type="file"
                                 name="taskImageUpload"
                                 id="taskImageUpload"
                                 accept="image/*"
                                 style={{ display: 'none' }}
-                            />
+                            /> */}
                         </div>
 
                         <FontAwesomeIcon
@@ -94,7 +116,8 @@ const EditProjectModal = ({ callbackEditProj, data }) => {
                             name="taskTitle"
                             id="taskTitle"
                             placeholder="Add title here..."
-                            value={data && data.projTitle ? data.projTitle : ''}
+                            value={data && data.title ? data.title : ''}
+                            onChange={handleChange}
                         />
                     </div>
                 </div>
@@ -105,21 +128,20 @@ const EditProjectModal = ({ callbackEditProj, data }) => {
                 >
                     Project Description
                 </label>
-                <input
-                    type="text"
+                <textarea
                     className={styles.textareaDesc}
                     name="taskDescription"
                     id="taskDescription"
+                    rows="10"
                     placeholder="Add description here..."
-                    value={data && data.projDesc ? data.projDesc : ''}
-                ></input>
+                    value={data && data.description ? data.description : ''}
+                    onChange={handleChange}
+                ></textarea>
                 {/* <Wysiwyg onChange={handleContentChange} /> */}
                 <hr className={styles.horizon} />
                 <div className={styles.taskButtons}>
                     <button className={styles.buttonAdd} onClick={toggleModal}>
-                        {data && data.projTitle
-                            ? 'Edit Project'
-                            : 'Add Project'}
+                        {data && data.title ? 'Edit Project' : 'Add Project'}
                     </button>
                     <button
                         className={styles.buttonCancel}

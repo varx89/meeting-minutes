@@ -1,11 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../context/userContext';
 import logo from '../../media/logo.webp';
 import userImage from '../../media/user.png';
 import styles from '../Dashboard/Header.module.css';
 
 const Header = () => {
+    const { user } = useContext(UserContext);
+
     return (
         <>
             <div className={styles.header}>
@@ -27,7 +30,7 @@ const Header = () => {
                                 src={userImage}
                                 alt="Account"
                             />
-                            <Link to="#">Andrei Varcus</Link>
+                            <Link to="#">{user && user.fullName}</Link>
                             <FontAwesomeIcon icon="fa-solid fa-gear" />
                         </div>
                     </li>
