@@ -152,7 +152,7 @@ const Projects = () => {
                                                   className={styles.viewProject}
                                                   to={
                                                       '/auth/dashboard/project/' +
-                                                      project.sloganUrl
+                                                      project._id
                                                   }
                                               >
                                                   Manage

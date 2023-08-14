@@ -1,0 +1,148 @@
+.taskAdd {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    background-color: white;
+    /* background-color: #72113012; */
+    /* border: 1px solid bisque; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+    cursor: pointer;
+}
+.addnewmodal {
+    background-color: white;
+    border-radius: 0.25rem;
+    /* height: 20rem; */
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    gap: 1rem;
+}
+
+.closeModal {
+    color: #37282d;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.closeModal h4 {
+    margin: 0;
+}
+.taskTitleGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+.taskTitleGroup label {
+    font-size: 0.8rem;
+    width: max-content;
+    position: relative;
+}
+.taskTitleGroup input {
+    height: 1.8rem;
+    width: 100%;
+    outline-style: none;
+    border: 0.1rem solid #e1b682;
+    border-radius: 0.25rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+    padding-left: 0.25rem;
+}
+
+.imageGroupTitle {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+.imgGroupFlex {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.imageGroupTitle label {
+    position: relative;
+}
+
+.taskDescLabel {
+    font-size: 0.8rem;
+}
+
+.textareaDesc {
+    padding: 0.25rem;
+    outline-style: none;
+    border: 0.1rem solid #e1b682;
+    border-radius: 0.2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+    width: 25rem;
+}
+.horizon {
+    border-top: 1px solid gray;
+    opacity: 0.25;
+    width: 80%;
+}
+.taskButtons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+.buttonAdd {
+    padding: 0.5rem 2rem;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+    border: 1px solid gray;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    width: 100%;
+}
+.buttonAdd:hover {
+    background-color: bisque;
+}
+.buttonAdd:hover::after {
+    content: ' \00bb';
+}
+.buttonCancel {
+    padding: 0.5rem 2rem;
+    background-color: bisque;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+    border: 1px solid gray;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    width: 100%;
+}
+.taskImg {
+    width: 9rem;
+    height: 6rem;
+    border-radius: 0.25rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+    border: 0.25rem solid rgb(221, 217, 217);
+    object-fit: cover;
+    position: relative;
+}
+.imageEdit {
+    position: absolute;
+    padding-bottom: 0.45rem;
+    padding-right: 0.3rem;
+    color: gray;
+}
+
+@media screen and (max-width: 445px) {
+    .addnewmodal {
+        max-width: 18rem;
+    }
+    .textareaDesc {
+        max-width: 18rem;
+    }
+}
