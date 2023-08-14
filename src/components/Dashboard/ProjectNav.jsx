@@ -1,19 +1,27 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import projimg from '../../media/no-image-found.png';
-import projectBG from '../../media/projectBG.png';
+import { UserContext } from '../../context/userContext';
+import { default as projimg } from '../../media/no-image-found.png';
 import styles from './ProjectNav.module.css';
 import EditProjectModal from './modal/EditProjectModal';
 
 const ProjectNav = () => {
-    const data = {
-        projTitle: 'FFFFFFGHDRTEDx',
-        projDesc: 'loren ipsum dolores sit amet whatever x',
-        projImg: projimg,
-    };
-    const [isProjectModal, setProjectModal] = useState(false);
+    const { user } = useContext(UserContext);
     const { id } = useParams();
+
+    const [apiData, setApiData] = useState(user);
+
+    useEffect(() => {
+        if (user) {
+            axios.get('/project/' + id).then(({ data }) => {
+                setApiData(data[0]);
+            });
+        }
+    }, [user, id]);
+
+    const [isProjectModal, setProjectModal] = useState(false);
 
     function editProject(payload) {
         setProjectModal(payload);
@@ -24,10 +32,18 @@ const ProjectNav = () => {
 
     return (
         <nav className={styles.project}>
-            <img src={projectBG} alt={id} onClick={showEditProjModal} />
+            <img
+                src={
+                    apiData && apiData.image
+                        ? `${process.env.REACT_APP_API_URL}/images/${apiData.image}`
+                        : projimg
+                }
+                alt={id}
+                onClick={showEditProjModal}
+            />
             <div className={styles.projGroupDesc}>
                 <span className={styles.projectName}>
-                    {id}
+                    {apiData && apiData.title}
                     <FontAwesomeIcon
                         onClick={showEditProjModal}
                         style={{ color: 'gray', paddingLeft: '0.5rem' }}
@@ -37,11 +53,13 @@ const ProjectNav = () => {
                     {isProjectModal && (
                         <EditProjectModal
                             callbackEditProj={editProject}
-                            data={data}
+                            dataprop={apiData}
                         />
                     )}
                 </span>
-                <span className={styles.projectDesc}>Description</span>
+                <span className={styles.projectDesc}>
+                    {apiData && apiData.description}
+                </span>
             </div>
 
             <div className={styles.projectGroupMenu}>
@@ -59,13 +77,13 @@ const ProjectNav = () => {
                     />
                     Charts
                 </div>
-                <div className={styles.projectMenu}>
+                {/* <div className={styles.projectMenu}>
                     <FontAwesomeIcon
                         style={{ color: 'gray' }}
                         icon="fa-solid fa-users"
                     />
                     Members&#128317;
-                </div>
+                </div> */}
             </div>
         </nav>
     );

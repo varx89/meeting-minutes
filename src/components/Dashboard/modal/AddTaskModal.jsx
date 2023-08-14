@@ -1,61 +1,36 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import axios from 'axios';
-import { React, useContext, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { React, useState } from 'react';
 import { toast } from 'react-toastify';
 import Modal from 'styled-react-modal';
-import { UserContext } from '../../../context/userContext';
 import noImageTask from '../../../media/no-image-found.png';
-import styles from './EditProjectModal.module.css';
+import styles from './AddTaskModal.module.css';
 
 const StyledModal = Modal.styled`
   opacity: ${(props) => props.opacity};
   transition : all 0.3s ease-in-out;`;
 
-const EditProjectModal = ({ callbackEditProj, dataprop }) => {
+const AddTaskModal = ({
+    callbackAddEdit,
+    propAddSubmit,
+    groupID,
+    taskID,
+    groupsTasks,
+}) => {
+    const initialForm = {
+        taskTitle: '',
+        taskDescription: '',
+        startDate: new Date().toLocaleDateString(),
+        groupID: groupID,
+    };
+
     const [isOpen, setIsOpen] = useState(true);
     const [opacity, setOpacity] = useState(0);
-    const [data, setData] = useState({
-        taskTitle: dataprop.title,
-        taskDescription: dataprop.description,
-        taskImage: '',
-    });
-
-    const { user } = useContext(UserContext);
-    const { id } = useParams();
-
-    async function handleSubmit(e) {
-        e.preventDefault();
-        toggleModal();
-        if (user) {
-            try {
-                const response = await axios.post('/project/' + id, data);
-
-                if (response.data.error) {
-                    toast.error(response.data.error);
-                } else if (response.data.success) {
-                    // setAddProject({});
-                    toast.success(response.data.success);
-                    window.location.reload();
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        }
-    }
-
-    function handleChange(e) {
-        const value = e.target.value;
-        setData({
-            ...data,
-            [e.target.name]: value,
-        });
-    }
+    const [form, setForm] = useState(initialForm);
 
     function toggleModal() {
         setOpacity(0);
         setIsOpen(!isOpen);
-        callbackEditProj(!isOpen);
+        callbackAddEdit(!isOpen);
     }
 
     function afterOpen() {
@@ -71,6 +46,23 @@ const EditProjectModal = ({ callbackEditProj, dataprop }) => {
         });
     }
 
+    function onSubmit(e) {
+        e.preventDefault();
+        //callback propaddsubmit
+        propAddSubmit(form);
+        setForm(initialForm);
+        toggleModal();
+        toast.success(form.taskTitle + ' task added successfully!');
+    }
+
+    function handleChange(e) {
+        const value = e.target.value;
+        setForm({
+            ...form,
+            [e.target.name]: value,
+        });
+    }
+
     return (
         <>
             <StyledModal
@@ -82,13 +74,9 @@ const EditProjectModal = ({ callbackEditProj, dataprop }) => {
                 opacity={opacity}
                 backgroundProps={{ opacity }}
             >
-                <form onSubmit={handleSubmit} className={styles.addnewmodal}>
+                <form onSubmit={onSubmit} className={styles.addnewmodal}>
                     <div className={styles.closeModal}>
-                        <h4>
-                            {data && data.taskTitle
-                                ? `Edit  ${dataprop.title}`
-                                : 'Add New Project'}
-                        </h4>
+                        <h4>Add New Task</h4>
                         <FontAwesomeIcon
                             icon="fa-solid fa-rectangle-xmark"
                             style={{ color: 'gray' }}
@@ -104,21 +92,17 @@ const EditProjectModal = ({ callbackEditProj, dataprop }) => {
                                 >
                                     <img
                                         className={styles.taskImg}
-                                        src={
-                                            data && data.taskImage
-                                                ? `${process.env.REACT_APP_API_URL}/images/${data.taskImage}`
-                                                : noImageTask
-                                        }
+                                        src={noImageTask}
                                         alt="No Set"
                                     />
                                 </label>
-                                {/* <input
-                                type="file"
-                                name="taskImageUpload"
-                                id="taskImageUpload"
-                                accept="image/*"
-                                style={{ display: 'none' }}
-                            /> */}
+                                <input
+                                    type="file"
+                                    name="taskImageUpload"
+                                    id="taskImageUpload"
+                                    accept="image/*"
+                                    style={{ display: 'none' }}
+                                />
                             </div>
 
                             <FontAwesomeIcon
@@ -128,13 +112,13 @@ const EditProjectModal = ({ callbackEditProj, dataprop }) => {
                         </div>
 
                         <div className={styles.taskTitleGroup}>
-                            <label htmlFor="taskTitle">Project Title</label>
+                            <label htmlFor="taskTitle">Task Title</label>
                             <input
                                 type="text"
                                 name="taskTitle"
                                 id="taskTitle"
                                 placeholder="Add title here..."
-                                value={data && data.taskTitle}
+                                value={form.taskTitle}
                                 onChange={handleChange}
                             />
                         </div>
@@ -144,7 +128,7 @@ const EditProjectModal = ({ callbackEditProj, dataprop }) => {
                         className={styles.taskDescLabel}
                         htmlFor="taskDescription"
                     >
-                        Project Description
+                        Task Description
                     </label>
                     <textarea
                         className={styles.textareaDesc}
@@ -152,16 +136,21 @@ const EditProjectModal = ({ callbackEditProj, dataprop }) => {
                         id="taskDescription"
                         rows="10"
                         placeholder="Add description here..."
-                        value={data && data.taskDescription}
+                        value={form.taskDescription}
                         onChange={handleChange}
                     ></textarea>
+                    <input
+                        type="hidden"
+                        name="startDate"
+                        id="startDate"
+                        value={form.startDate}
+                        onChange={handleChange}
+                    />
                     {/* <Wysiwyg onChange={handleContentChange} /> */}
                     <hr className={styles.horizon} />
                     <div className={styles.taskButtons}>
                         <button type="submit" className={styles.buttonAdd}>
-                            {data && data.taskTitle
-                                ? 'Edit Project'
-                                : 'Add Project'}
+                            Add Task
                         </button>
                         <button
                             className={styles.buttonCancel}
@@ -176,4 +165,4 @@ const EditProjectModal = ({ callbackEditProj, dataprop }) => {
     );
 };
 
-export default EditProjectModal;
+export default AddTaskModal;

@@ -9,8 +9,9 @@
 }
 .project img {
     width: 3.5rem;
+    height: 3.5rem;
     position: absolute;
-    border: 0.2rem solid rgb(221, 217, 217);
+    border: 0.15rem solid #b2a2a2;
     border-radius: 0.5rem;
     box-shadow: rgba(149, 157, 165, 0.4) 0px 0.5rem 1rem;
 }

@@ -70,14 +70,10 @@
 }
 .imageGroupTitle label {
     position: relative;
-    width: 100%;
-    text-align: left;
 }
 
 .taskDescLabel {
     font-size: 0.8rem;
-    width: 100%;
-    text-align: left;
 }
 
 .textareaDesc {
@@ -87,8 +83,6 @@
     border-radius: 0.2rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
     width: 25rem;
-    height: 4rem;
-    padding: 0.2rem 0.25rem 0.2rem 0.25rem;
 }
 .horizon {
     border-top: 1px solid gray;
@@ -129,8 +123,8 @@
     width: 100%;
 }
 .taskImg {
-    width: 5rem;
-    height: 5rem;
+    width: 9rem;
+    height: 6rem;
     border-radius: 0.25rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
     border: 0.25rem solid rgb(221, 217, 217);
